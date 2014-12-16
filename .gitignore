@@ -26,6 +26,6 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
-.swp
-.swo
+*.swp
+*.swo
 .DS_Store
