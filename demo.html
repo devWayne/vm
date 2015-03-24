@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta name='description' content='' http-equiv='X-UA-Compatible'>
+  <meta content='width=device-width, initial-scale=1' name='viewport'>
+  <title> Vm-demo </title>
+  <script src='./index.js'></script>
+</head>
+<style>
+.form{
+  padding: 15px;
+  border: 1px solid;
+}
+</style>
+<body>
+<form vm-form class="form">
+  <div vm-for='contacts' >
+    <p>
+      <span vm-html='$index'>a</span>
+      <span vm-html='$value.name.first'>b</span>
+      <span vm-html='$value.name.last'>b</span>
+      <span vm-html='$value.age'>b</span>
+    </p>
+  </div>
+
+  <button vm-show='showButton'>Continue</button>
+  <input type='checkbox' vm-checked='showButton'> Show the button!
+       
+   <p>
+   <input type='text' vm-value='sweg'>
+      <span vm-html='$root.sweg'>b</span>
+  </p>
+
+  </form>
+  <script>
+    window.vm.init();
+    window.vm.set('sweg', 'yolo');
+    window.vm.set('contacts', [{
+      'name': {
+        'first': 'cao',
+        'last': 'zhiqiang'
+      },
+      'age': 58
+    },{
+      'name': {
+        'first': 'vi',
+        'last': 'wayne'
+      },
+      'age': 12
+    },{
+      'name': {
+        'first': 'kylar',
+        'last': 'wayne'
+      },
+      'age': 43
+    }]);
+
+
+    //console.log(tiny.root);
+    //console.log(tiny.get('contacts.0.name'));
+  </script>
+</body>
+</html>
+
