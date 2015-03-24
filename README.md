@@ -1,19 +1,18 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset='utf-8'>
-  <meta name='description' content='' http-equiv='X-UA-Compatible'>
-  <meta content='width=device-width, initial-scale=1' name='viewport'>
-  <title> Vm-demo </title>
-  <script src='./index.js'></script>
-</head>
-<style>
-.form{
-  padding: 15px;
-  border: 1px solid;
-}
-</style>
-<body>
+Vm.js
+============
+Simple ViewModel
+
+### For value
+```html
+   <p>
+   <input type='text' vm-value='demo-value'>
+      <span vm-html='$root.demo-value'>b</span>
+  </p>
+
+```
+
+### For Loops
+```html
 <form vm-form class="form">
   <div vm-for='contacts' >
     <p>
@@ -23,17 +22,14 @@
       <span vm-html='$value.age'>b</span>
     </p>
   </div>
-
-  <button vm-show='showButton'>Continue</button>
-  <input type='checkbox' vm-checked='showButton'> Show the button!
-       
    <p>
    <input type='text' vm-value='demo-value'>
       <span vm-html='$root.demo-value'>b</span>
   </p>
 
   </form>
-  <script>
+```
+```js
     window.vm.init();
     window.vm.set('demo-value', 'wayne');
     window.vm.set('contacts', [{
@@ -55,11 +51,11 @@
       },
       'age': 43
     }]);
+```
 
-
-    //console.log(tiny.root);
-    //console.log(tiny.get('contacts.0.name'));
-  </script>
-</body>
-</html>
+### For Show
+```html
+  <button vm-show='showButton'>Continue</button>
+  <input type='checkbox' vm-checked='showButton'> Show the button!
+```
 
